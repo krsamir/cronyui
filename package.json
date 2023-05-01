@@ -7,6 +7,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krsamir/cronyui.git"
+  },
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w"
@@ -27,5 +31,9 @@
     "rollup-plugin-sass": "^1.12.19",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^5.0.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/krsamir/cronyui/issues"
+  },
+  "homepage": "https://github.com/krsamir/cronyui#readme"
 }
