@@ -74,28 +74,11 @@ var arrayToString = function (arr) {
     return arr.join(' ');
 };
 
-/**
- * @props
- *
- * className: adds classname to the HTML element
- *
- * id: add id to the HTML element
- *
- * style: adding custom styles to the HTML element
- *
- * type: type of button: 'button' | 'reset' | 'submit'
- *
- * onClick: onClick handler for button
- *
- * autoFocus: boolean
- *
- * props: provide addition props via this object
- */
-function Button(_a) {
-    var _b = _a.children, children = _b === void 0 ? '' : _b, _c = _a.className, className = _c === void 0 ? '' : _c, _d = _a.id, id = _d === void 0 ? '' : _d, _e = _a.style, style = _e === void 0 ? {} : _e, _f = _a.onClick, onClick = _f === void 0 ? function () { return null; } : _f, _g = _a.props, props = _g === void 0 ? {} : _g, _h = _a.autoFocus, autoFocus = _h === void 0 ? false : _h;
+var Button = React.forwardRef(function (props, ref) {
+    var _a;
     return (React.createElement(React.Fragment, null,
-        React.createElement("button", __assign({ id: id, className: arrayToString(['btn', className !== null && className !== void 0 ? className : '']), style: __assign({}, style), onClick: onClick, autoFocus: autoFocus }, props), children)));
-}
+        React.createElement("button", __assign({ ref: ref, className: arrayToString(['btn', (_a = props.className) !== null && _a !== void 0 ? _a : '']) }, props), props.children)));
+});
 
 exports.Button = Button;
 exports.ButtonProps = Button;
