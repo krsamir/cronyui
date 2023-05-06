@@ -27,6 +27,6 @@ function App() {
 }
 ```
 
-## description
+## Description
 
 Additionaly you can add any props on top of the provided props on the component.

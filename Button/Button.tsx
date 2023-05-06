@@ -1,56 +1,36 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, forwardRef } from 'react';
 import './Button.css';
 import { arrayToString } from '../Utilities/utilities';
 
-export interface ButtonProps extends PropsWithChildren {
+export interface ButtonProps
+  extends PropsWithChildren,
+    React.HTMLProps<HTMLButtonElement> {
   className?: string;
   id?: string;
   style?: React.CSSProperties;
   type?: 'button' | 'reset' | 'submit';
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  autoFocus: boolean;
-  props: any;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  autoFocus?: boolean;
+  props?: any;
 }
 /**
  * @props
  *
- * className: adds classname to the HTML element
- *
- * id: add id to the HTML element
- *
- * style: adding custom styles to the HTML element
- *
- * type: type of button: 'button' | 'reset' | 'submit'
- *
- * onClick: onClick handler for button
- *
- * autoFocus: boolean
+ * `className`: adds classname to the HTML element
  *
  * props: provide addition props via this object
  */
-function Button({
-  children = '',
-  className = '',
-  id = '',
-  style = {},
-  onClick = () => null,
-  props = {},
-  autoFocus = false,
-}: ButtonProps) {
-  return (
-    <React.Fragment>
-      <button
-        id={id}
-        className={arrayToString(['btn', className ?? ''])}
-        style={{ ...style }}
-        onClick={onClick}
-        autoFocus={autoFocus}
-        {...props}
-      >
-        {children}
-      </button>
-    </React.Fragment>
-  );
-}
+type Ref = HTMLButtonElement;
+
+const Button = forwardRef<Ref, ButtonProps>((props, ref) => (
+  <React.Fragment>
+    <button
+      className={arrayToString(['btn', props.className ?? ''])}
+      {...props}
+    >
+      {props.children}
+    </button>
+  </React.Fragment>
+));
 
 export default Button;
