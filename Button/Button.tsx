@@ -25,6 +25,7 @@ type Ref = HTMLButtonElement;
 const Button = forwardRef<Ref, ButtonProps>((props, ref) => (
   <React.Fragment>
     <button
+      ref={ref}
       className={arrayToString(['btn', props.className ?? ''])}
       {...props}
     >
