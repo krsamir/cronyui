@@ -27,6 +27,8 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
+/* global Reflect, Promise */
+
 
 var __assign = function() {
     __assign = Object.assign || function __assign(t) {
@@ -66,8 +68,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".btn {\n  background-color: #0e406a;\n  padding: 15px 25px;\n  color: #fff;\n  border: none;\n  outline: #fff;\n  border-radius: 4px;\n  font-size: 14px;\n  font-weight: 600;\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),\n    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\n}\n\n.btn:hover {\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),\n    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\n}\n";
-styleInject(css_248z);
+var css_248z$1 = ".btn {\r\n  background-color: #0e406a;\r\n  padding: 15px 25px;\r\n  color: #fff;\r\n  border: none;\r\n  outline: #fff;\r\n  border-radius: 4px;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),\r\n    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\r\n}\r\n\r\n.btn:hover {\r\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),\r\n    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\r\n}\r\n";
+styleInject(css_248z$1);
 
 var arrayToString = function (arr) {
     if (arr === void 0) { arr = []; }
@@ -80,6 +82,17 @@ var Button = React.forwardRef(function (props, ref) {
         React.createElement("button", __assign({ ref: ref, className: arrayToString(['btn', (_a = props.className) !== null && _a !== void 0 ? _a : '']) }, props), props.children)));
 });
 
+var css_248z = ".inp{\r\n    padding: 10px 10px;\r\n    outline: none;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    /* border: 2px solid #ebebeb; */\r\n    border: 2px solid #0e406a;\r\n    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),\r\n    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\r\n}\r\n\r\n.inp:hover {\r\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),\r\n    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\r\n}\r\n";
+styleInject(css_248z);
+
+var Input = React.forwardRef(function (props, ref) {
+    var _a;
+    return (React.createElement(React.Fragment, null,
+        React.createElement("input", __assign({ ref: ref }, props, { className: arrayToString(["inp", (_a = props.className) !== null && _a !== void 0 ? _a : ""]) }))));
+});
+
 exports.Button = Button;
 exports.ButtonProps = Button;
+exports.Input = Input;
+exports.InputProps = Input;
 //# sourceMappingURL=index.js.map
