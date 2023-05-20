@@ -85,14 +85,14 @@ var Button = React.forwardRef(function (props, ref) {
 var css_248z = ".inp{\r\n    padding: 10px 10px;\r\n    outline: none;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    /* border: 2px solid #ebebeb; */\r\n    border: 2px solid #0e406a;\r\n    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),\r\n    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);\r\n}\r\n\r\n.inp:hover {\r\n  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),\r\n    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);\r\n}\r\n";
 styleInject(css_248z);
 
-var Input = React.forwardRef(function (props, ref) {
+var TextInput = React.forwardRef(function (props, ref) {
     var _a;
     return (React.createElement(React.Fragment, null,
-        React.createElement("input", __assign({ ref: ref }, props, { className: arrayToString(["inp", (_a = props.className) !== null && _a !== void 0 ? _a : ""]) }))));
+        React.createElement("input", __assign({ type: "text", ref: ref }, props, { className: arrayToString(["inp", (_a = props.className) !== null && _a !== void 0 ? _a : ""]) }))));
 });
 
 exports.Button = Button;
 exports.ButtonProps = Button;
-exports.Input = Input;
-exports.InputProps = Input;
+exports.TextInput = TextInput;
+exports.TextInputProps = TextInput;
 //# sourceMappingURL=index.js.map

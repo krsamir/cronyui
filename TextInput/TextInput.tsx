@@ -1,14 +1,15 @@
 import React, { forwardRef } from "react";
 import { arrayToString } from "../Utilities/utilities";
-import "./Input.css";
+import "./TextInput.css";
 
-export interface InputProps extends React.HTMLProps<HTMLInputElement> {}
+export interface TextInputProps extends React.HTMLProps<HTMLInputElement> {}
 
 type Ref = HTMLInputElement;
 
-const Input = forwardRef<Ref, InputProps>((props, ref) => (
+const TextInput = forwardRef<Ref, TextInputProps>((props, ref) => (
   <React.Fragment>
     <input
+      type="text"
       ref={ref}
       {...props}
       className={arrayToString(["inp", props.className ?? ""])}
@@ -16,4 +17,4 @@ const Input = forwardRef<Ref, InputProps>((props, ref) => (
   </React.Fragment>
 ));
 
-export default Input;
+export default TextInput;
